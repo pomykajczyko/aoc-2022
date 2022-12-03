@@ -26,4 +26,8 @@
       <ProjectReference Include="..\Opsoft.AdventOfCode\Opsoft.AdventOfCode.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove=".gitignore" />
+    </ItemGroup>
+
 </Project>
