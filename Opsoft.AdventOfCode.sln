@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opsoft.AdventOfCode", "Opsoft.AdventOfCode\Opsoft.AdventOfCode.csproj", "{3A86A12F-08DD-4DBD-8971-BBF8B6B50E22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opsoft.AdventOfCode.Tests", "Opsoft.AdventOfCode.Tests\Opsoft.AdventOfCode.Tests.csproj", "{2D4D5585-93DC-4609-8481-79D21134C914}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A86A12F-08DD-4DBD-8971-BBF8B6B50E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A86A12F-08DD-4DBD-8971-BBF8B6B50E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A86A12F-08DD-4DBD-8971-BBF8B6B50E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A86A12F-08DD-4DBD-8971-BBF8B6B50E22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D4D5585-93DC-4609-8481-79D21134C914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D4D5585-93DC-4609-8481-79D21134C914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D4D5585-93DC-4609-8481-79D21134C914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D4D5585-93DC-4609-8481-79D21134C914}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
