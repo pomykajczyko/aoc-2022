@@ -1,7 +1,5 @@
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-
 namespace Opsoft.AdventOfCode;
+
 internal sealed class Day2 : AdventDay<int, int>
 {
     private readonly IEnumerable<string> _lines;
@@ -12,14 +10,11 @@ internal sealed class Day2 : AdventDay<int, int>
     }
 
     public override int GetPartOneAnswer()
-    {
-        var tournamentPartOne = new Tournament<RoundWithMoves>(_lines);
-        return tournamentPartOne.GetSummaryScore();
-    }
+        => GetTournamentScore<RoundWithMoves>();
 
     public override int GetPartTwoAnswer()
-    {
-        var tournamentPartTwo = new Tournament<RoundWithStrategy>(_lines);
-        return tournamentPartTwo.GetSummaryScore();
-    }
+        => GetTournamentScore<RoundWithStrategy>();
+
+    private int GetTournamentScore<TRound>() where TRound : Round
+        => new Tournament<TRound>(_lines).GetSummaryScore();
 }

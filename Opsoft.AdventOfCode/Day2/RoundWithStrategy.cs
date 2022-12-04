@@ -1,9 +1,6 @@
-
-using System;
-
 namespace Opsoft.AdventOfCode;
 
-internal class RoundWithStrategy : Round
+internal sealed class RoundWithStrategy : Round
 {
     private readonly int _expectedResult;
 
