@@ -1,45 +1,36 @@
-using System;
-
 namespace Opsoft.AdventOfCode;
 
 internal abstract class Round
 {
     protected Move OpponentMove;
     protected Move? MyMove;
-    protected string[] SplittedLine;
+    protected readonly string[] SplittedLine;
 
     protected Round(string line)
     {
-        SplittedLine = line.Split(" ");
+        SplittedLine = line.Split(' ');
         OpponentMove = new Move(SplittedLine[0]);
         MyMove = new Move(SplittedLine[1]);
     }
-    
+
     public virtual int CalculateScore()
-    {
-        var totalScore = 0;
-        totalScore += CalculateRoundResult();
-        totalScore += (int)MyMove!.Value;
-        return totalScore;
-    }
+        => CalculateRoundResult() + (int)MyMove!.Value;
+
     private int CalculateRoundResult()
     {
-        var roundResult = -1;
-        if (MyMove == OpponentMove) roundResult = ResultType.Draw;
-        else
-            roundResult = OpponentMove.Value switch
-            {
-                Shape.Rock => GetResultForOpponentShape(),
-                Shape.Paper => GetResultForOpponentShape(),
-                Shape.Scissors => GetResultForOpponentShape(),
-                _ => roundResult
-            };
+        var roundResult =
+            MyMove == OpponentMove ? ResultType.Draw : GetResultForOpponentShape();
         if (roundResult == -1) throw new Exception("Something gone wrong");
         return roundResult;
     }
+
     private int GetResultForOpponentShape()
     {
-        if (MyMove is null) throw new NullReferenceException("Move cannot be null");
-        return MyMove.Value == PaperScissorsGamePolicy.GetWinningMove(OpponentMove) ? ResultType.Win : ResultType.Lose;
+        if (MyMove is null)
+            throw new NullReferenceException("Move cannot be null");
+        return MyMove.Value ==
+               PaperScissorsGamePolicy.GetWinningMove(OpponentMove)
+            ? ResultType.Win
+            : ResultType.Lose;
     }
 }
