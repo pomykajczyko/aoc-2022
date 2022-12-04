@@ -29,17 +29,17 @@ internal abstract class Round
         else
             roundResult = OpponentMove.Value switch
             {
-                Shape.Rock => GetResultForOpponentShape(Shape.Paper),
-                Shape.Paper => GetResultForOpponentShape(Shape.Scissors),
-                Shape.Scissors => GetResultForOpponentShape(Shape.Rock),
+                Shape.Rock => GetResultForOpponentShape(),
+                Shape.Paper => GetResultForOpponentShape(),
+                Shape.Scissors => GetResultForOpponentShape(),
                 _ => roundResult
             };
         if (roundResult == -1) throw new Exception("Something gone wrong");
         return roundResult;
     }
-    private int GetResultForOpponentShape(Shape winningShape)
+    private int GetResultForOpponentShape()
     {
         if (MyMove is null) throw new NullReferenceException("Move cannot be null");
-        return MyMove.Value == winningShape ? ResultType.Win : ResultType.Lose;
+        return MyMove.Value == PaperScissorsGamePolicy.GetWinningMove(OpponentMove) ? ResultType.Win : ResultType.Lose;
     }
 }
